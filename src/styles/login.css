@@ -1,0 +1,13 @@
+body {
+    margin: 0;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+}
+
+#greetings-container {
+    background: #01001E;
+}
