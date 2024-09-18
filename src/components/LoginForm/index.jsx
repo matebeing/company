@@ -33,7 +33,6 @@ const LoginForm = () => {
                     error={!!errors.user}
                     helperText={errors.user ? errors.user.message : ''}
                     fullWidth
-                    margin="normal"
                 />
                 )}
             />
@@ -49,9 +48,7 @@ const LoginForm = () => {
                     variant="outlined"
                     error={!!errors.password}
                     helperText={errors.password ? errors.password.message : ''}
-                    fullWidth
-                    margin="normal"
-                    
+                    fullWidth                    
                 />
                 )}
             />
