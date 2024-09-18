@@ -29,7 +29,7 @@ function Register() {
                 <div className={classes.loginBlock}>
                     <div className={classes.loginTextBlock}>
                         <h1>Crie uma conta</h1>
-                        <p>Você já tem uma conta? <Link to='/login' className={classes.loginTextBlockParagraph}>Entrar</Link></p>
+                        <p className={classes.loginTextBlockParagraph}>Você já tem uma conta? <Link to='/login'>Entrar</Link></p>
                     </div>
                     <RegisterForm />
                 </div>

@@ -39,7 +39,7 @@ const useStyles = makeStyles({
     },
 
     loginTextBlockParagraph: {
-        color: '#312ECB'
+        fontSize: '0.8em'
     }
 })
 

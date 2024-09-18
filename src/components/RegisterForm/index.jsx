@@ -9,8 +9,6 @@ import Checkbox from '@material-ui/core/Checkbox';
 import useStyles from './style';
 import schema from './schema';
 import { Link } from 'react-router-dom';
-
-import { Navigate } from "react-router-dom";
 import { useState, useEffect } from 'react';
 
 

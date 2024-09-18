@@ -29,7 +29,7 @@ function Login() {
                 <div className={classes.loginBlock}>
                     <div className={classes.loginTextBlock}>
                         <h1>Bem vindo de volta</h1>
-                        <p>Não tem uma conta? <Link to='/cadastro' className={classes.loginTextBlockParagraph}>Criar conta</Link></p>
+                        <p className={classes.loginTextBlockParagraph}>Não tem uma conta? <Link to='/cadastro'>Criar conta</Link></p>
                     </div>
                     <LoginForm />
                 </div>
