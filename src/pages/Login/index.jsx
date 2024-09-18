@@ -1,6 +1,5 @@
 // import '../styles/login.css';
-// import Logo from '../assets/logo.svg';
-//import {CompanyLogo} from '../assets';
+import Logo from '../../assets/logo.svg';
 
 import { Link } from "react-router-dom";
 import LoginForm from "../../components/LoginForm";
@@ -13,9 +12,11 @@ function Login() {
     return(
         <main className={classes.mainContainer}>
             <section className={classes.greetingsContainer}>
-                <div id='greetings-block' className={classes.greetingsBlock}>
+                <div className={classes.greetingsBlock}>
                     <div id='greetings-block-logo-wrap'>
-                        {/* <img src={Logo} id="logo" /> */}
+                        <img src={Logo} id="logo" />
+                        {/* <CompanyLogo /> */}
+                        
                     </div>
                     <div id='greetings-block-text-wrap'>
                         <h1>Seja bem vindo</h1>
@@ -24,11 +25,11 @@ function Login() {
                 </div>
             </section>
 
-            <section id='login-container' className={classes.loginContainer}>
-                <div id='login-block' className={classes.loginBlock}>
-                    <div id='login-text-block' className={classes.loginTextBlock}>
+            <section className={classes.loginContainer}>
+                <div className={classes.loginBlock}>
+                    <div className={classes.loginTextBlock}>
                         <h1>Bem vindo de volta</h1>
-                        <p>Não tem uma conta? <Link to='/cadastro'>Criar conta</Link></p>
+                        <p>Não tem uma conta? <Link to='/cadastro' className={classes.loginTextBlockParagraph}>Criar conta</Link></p>
                     </div>
                     <LoginForm />
                 </div>

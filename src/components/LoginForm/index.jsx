@@ -55,7 +55,7 @@ const LoginForm = () => {
                 />
                 )}
             />
-             <p>Esqueci minha senha</p>
+             <p className={classes.loginFormBlockForget}>Esqueci minha senha</p>
 
              <Button variant='contained' color='primary' className={classes.buttonStyle} type='submit' disableElevation>Entrar</Button>
 

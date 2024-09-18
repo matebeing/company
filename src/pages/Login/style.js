@@ -36,6 +36,10 @@ const useStyles = makeStyles({
         display: 'flex',
         flexDirection: 'column',
         marginBottom: '4rem'
+    },
+
+    loginTextBlockParagraph: {
+        color: '#312ECB'
     }
 })
 
