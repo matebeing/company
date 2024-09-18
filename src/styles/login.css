@@ -4,10 +4,74 @@ body {
 
 main {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 600px 1fr;
     height: 100vh;
 }
 
+#logo {
+    width: 10rem;
+}
+
+
 #greetings-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
     background: #01001E;
+}
+
+#greetings-block {
+    display: flex;
+    flex-direction: column;
+    gap: 26rem;
+    width: 350px;
+}
+
+#greetings-block-text-wrap > h1 {
+    font-size: 2em;
+}
+
+#greetings-block-text-wrap > p {
+    color: rgb(219, 219, 219);
+}
+
+#login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#login-block {
+    width: 500px;
+}
+
+#login-text-block {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4rem;
+    
+}
+
+#login-text-block > h1 {
+    font-size: 1.8em;
+}
+
+#login-text-block > p {
+    font-size: 0.9em;
+}
+
+#login-text-block > p > a {
+    color: #312ECB;
+}
+
+#login-form-block {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#login-form-block > p {
+    text-align: right;
+    color: #312ECB;
 }
