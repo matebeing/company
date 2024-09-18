@@ -1,25 +1,12 @@
-import '../styles/login.css';
 
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import * as Yup from 'yup';
 
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import { makeStyles } from '@material-ui/styles';
 
-
-const schema = Yup.object().shape({
-    user: Yup.string().required('Usuário é obrigatório'),
-    password: Yup.string().min(6, 'A senha deve ter pelo menos 8 caracteres').required('Senha é obrigatória'),
-});
-
-const useStyles = makeStyles({
-    buttonStyle: {
-        width: '250px',
-        marginTop: '1em'
-    }
-})
+import useStyles from './style';
+import schema from './schema';
 
 const LoginForm = () => {
     const { control, handleSubmit, formState: { errors } } = useForm({
@@ -33,7 +20,7 @@ const LoginForm = () => {
     const classes = useStyles();
 
     return ( 
-        <form onSubmit={handleSubmit(onSubmit)} id='login-form-block'>
+        <form onSubmit={handleSubmit(onSubmit)} className={classes.loginFormBlock}>
             <Controller
                 name="user"
                 control={control}
@@ -70,7 +57,7 @@ const LoginForm = () => {
             />
              <p>Esqueci minha senha</p>
 
-             <Button variant='contained' color='primary' className={classes.buttonStyle} type='submit'>Entrar</Button>
+             <Button variant='contained' color='primary' className={classes.buttonStyle} type='submit' disableElevation>Entrar</Button>
 
         </form>
     )
