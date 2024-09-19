@@ -12,19 +12,19 @@ import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 
-const RegisterForm = () => {
+const RegisterForm = ({ onRegister }) => {
     const [success, setSuccess] = useState(false)
-    
+    const classes = useStyles();
+
+
     const { control, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(schema),
     });
 
     const onSubmit = (data) => {
-        console.log(data);
-        alert("boo")
+        onRegister();
     };
 
-    const classes = useStyles();
 
     return ( 
         <form onSubmit={handleSubmit(onSubmit)} className={classes.loginFormBlock}>
