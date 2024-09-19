@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 
-const LoginForm = () => {
+const RegisterForm = () => {
     const [success, setSuccess] = useState(false)
     
     const { control, handleSubmit, formState: { errors } } = useForm({
@@ -124,4 +124,4 @@ const LoginForm = () => {
     )
 }
 
-export default LoginForm
+export default RegisterForm
