@@ -1,10 +1,17 @@
 import { makeStyles } from '@material-ui/styles';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     mainContainer: {
         display: 'grid',
-        gridTemplateColumns: '600px 1fr',
-        height: '100vh'
+        height: '100vh',
+
+        [theme.breakpoints.up('lg')]: {
+            gridTemplateColumns: '600px 1fr',
+        },
+
+        [theme.breakpoints.down('md')]: {
+            gridTemplateRows: '10em 1fr',
+        },
     },
 
     greetingsContainer: {
@@ -41,6 +48,6 @@ const useStyles = makeStyles({
     loginTextBlockParagraph: {
         fontSize: '0.8em'
     }
-})
+})) 
 
 export default useStyles;
