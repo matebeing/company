@@ -9,12 +9,11 @@ import Checkbox from '@material-ui/core/Checkbox';
 import useStyles from './style';
 import schema from './schema';
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 
 
 const RegisterForm = ({ onRegister }) => {
-    const [success, setSuccess] = useState(false)
     const classes = useStyles();
+    const accounts = JSON.parse(localStorage.getItem('accounts')) || [];
 
 
     const { control, handleSubmit, formState: { errors } } = useForm({
@@ -22,6 +21,8 @@ const RegisterForm = ({ onRegister }) => {
     });
 
     const onSubmit = (data) => {
+        accounts.push(data);
+        localStorage.setItem('accounts', JSON.stringify(accounts));
         onRegister();
     };
 

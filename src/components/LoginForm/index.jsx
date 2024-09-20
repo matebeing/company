@@ -7,14 +7,27 @@ import Button from '@material-ui/core/Button';
 
 import useStyles from './style';
 import schema from './schema';
+import { useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
+    const accounts = JSON.parse(localStorage.getItem('accounts')) || [];
+    const navigate = useNavigate();
+
     const { control, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(schema),
     });
 
     const onSubmit = (data) => {
-        console.log(data);
+        let user = accounts.find(acc => acc.user === data.nickname && acc.password === data.password);
+        
+        if (user) {
+            navigate('/home')
+        } else {
+            alert('Dados inválidos');
+        }
+
+        console.log(data)
+        console.log(accounts)
     };
 
     const classes = useStyles();

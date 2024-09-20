@@ -1,9 +1,11 @@
+import Home from "../pages/Home"
 import Login from "../pages/Login"
 import Register from "../pages/Register"
 
 const routes = [
     {path: '/login', element: <Login />},
-    {path: '/cadastro', element: <Register />}
+    {path: '/register', element: <Register />},
+    {path: '/home', element: <Home />}
 ]
 
 export default routes
