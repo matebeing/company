@@ -8,6 +8,7 @@ import Button from '@material-ui/core/Button';
 import useStyles from './style';
 import schema from './schema';
 import { useNavigate } from 'react-router-dom';
+import PasswordField from '../PasswordField/PasswordField';
 
 const LoginForm = () => {
     const accounts = JSON.parse(localStorage.getItem('accounts')) || [];
@@ -21,19 +22,16 @@ const LoginForm = () => {
         let user = accounts.find(acc => acc.user === data.nickname && acc.password === data.password);
         
         if (user) {
-            navigate('/home')
+            navigate('/home', {state: {data}})
         } else {
             alert('Dados inválidos');
         }
-
-        console.log(data)
-        console.log(accounts)
     };
 
     const classes = useStyles();
 
     return ( 
-        <form onSubmit={handleSubmit(onSubmit)} className={classes.loginFormBlock}>
+        <form onSubmit={handleSubmit(onSubmit, console.log)} className={classes.loginFormBlock}>
             <Controller
                 name="user"
                 control={control}
@@ -54,17 +52,10 @@ const LoginForm = () => {
                 control={control}
                 defaultValue=""
                 render={({ field }) => (
-                <TextField
-                    {...field}
-                    label="Senha"
-                    type="password"
-                    variant="outlined"
-                    error={!!errors.password}
-                    helperText={errors.password ? errors.password.message : ''}
-                    fullWidth                    
-                />
+                    <PasswordField label="Senha" {...field} errors={errors}/>
                 )}
             />
+
              <p className={classes.loginFormBlockForget}>Esqueci minha senha</p>
 
              <Button variant='contained' color='primary' className={classes.buttonStyle} type='submit' disableElevation>Entrar</Button>

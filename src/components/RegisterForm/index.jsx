@@ -9,23 +9,26 @@ import Checkbox from '@material-ui/core/Checkbox';
 import useStyles from './style';
 import schema from './schema';
 import { Link } from 'react-router-dom';
+import PasswordField from '../PasswordField/PasswordField';
 
 
 const RegisterForm = ({ onRegister }) => {
     const classes = useStyles();
-    const accounts = JSON.parse(localStorage.getItem('accounts')) || [];
 
+    const accounts = JSON.parse(localStorage.getItem('accounts')) || [];
 
     const { control, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(schema),
     });
 
     const onSubmit = (data) => {
-        accounts.push(data);
-        localStorage.setItem('accounts', JSON.stringify(accounts));
+        // accounts.push(data);
+
+        const newAccounts = [...accounts, data]
+        localStorage.setItem('accounts', JSON.stringify(newAccounts));
+
         onRegister();
     };
-
 
     return ( 
         <form onSubmit={handleSubmit(onSubmit)} className={classes.loginFormBlock}>
@@ -80,20 +83,13 @@ const RegisterForm = ({ onRegister }) => {
                     />
                     )}
                 />
+                
                 <Controller
                     name="password"
                     control={control}
                     defaultValue=""
                     render={({ field }) => (
-                        <TextField
-                            {...field}
-                            label="Senha"
-                            type="password"
-                            variant="outlined"
-                            error={!!errors.password}
-                            helperText={errors.password ? errors.password.message : ''}
-                            fullWidth
-                        />
+                        <PasswordField label="Senha"  {...field} errors={errors}/>
                     )}
                 />
 
@@ -102,24 +98,16 @@ const RegisterForm = ({ onRegister }) => {
                     control={control}
                     defaultValue=""
                     render={({ field }) => (
-                        <TextField
-                            {...field}
-                            label="Confirmar senha"
-                            type="password"
-                            variant="outlined"
-                            error={!!errors.confirmPassword}
-                            helperText={errors.confirmPassword ? errors.confirmPassword.message : ''}
-                            fullWidth
-                        />
+                        <PasswordField label="Confirmar senha" {...field} errors={errors}/>
                     )}
                 />                
             </section>  
             <section className={classes.loginFormBlockTerms}>
-                <Checkbox color='primary'/>
+                <Checkbox required color='primary'/>
                 <p>Eu aceito todos os <Link>Termos e Serviços</Link> e <Link>Políticas de Privacidades</Link></p>
             </section>
 
-            <Button variant='contained' color='primary' className={classes.buttonStyle} type='submit' disableElevation>Criar Conta</Button>
+            <Button variant='contained' color='primary' className={classes.buttonStyle} type='submit' disableElevation>Criar conta</Button>
 
         </form>
     )

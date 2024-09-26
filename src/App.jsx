@@ -1,13 +1,15 @@
 import { BrowserRouter } from "react-router-dom";
 import AppRoutes from "./routes"
 import { createTheme, ThemeProvider } from "@material-ui/core";
+import theme from "./theme/theme";
 
-const theme = createTheme();
+const themes = createTheme(theme);
+  
 
 const App = () => {
     return (
         <BrowserRouter>
-            <ThemeProvider theme={theme}>
+            <ThemeProvider theme={themes}>
                 <AppRoutes />
             </ThemeProvider>
         </BrowserRouter>

@@ -1,10 +1,6 @@
 import { makeStyles } from '@material-ui/styles';
 
 const useStyles = makeStyles({
-    buttonStyle: {
-        width: '250px',
-        marginTop: '1.2em'
-    },
 
     loginFormBlock: {
         display: 'flex',
