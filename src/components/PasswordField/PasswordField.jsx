@@ -22,12 +22,16 @@ const PasswordField = ({label, errors = {}, ...fields}) => {
       error={!!errors[fields.name]}
       helperText={errors[fields.name]? errors[fields.name].message : ''}
       InputProps={{
+        inputProps: {
+          'data-testid': "password-input"
+        },
         endAdornment: (
           <InputAdornment position="end">
             <IconButton
               onClick={handleClickShowPassword}
               onMouseDown={handleMouseDownPassword}
               edge="end"
+              data-testId="showPassword"
             >
               {showPassword ? <VisibilityOff /> : <Visibility />}
             </IconButton>

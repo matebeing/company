@@ -12,7 +12,7 @@ const GreetingsWrapper = () => {
             <div className={classes.greetingsBlock}>
                 <div>
                     {/* <img src={Logo} id="logo" /> */}
-                    <Logo className={classes.greetingsBlockLogo} />
+                    <Logo role="img" className={classes.greetingsBlockLogo} aria-label="Company Logo" alt="Company Logo" />
                 </div>
                 <div className={classes.greetingsBlockText}>
                     <h1>Seja bem vindo</h1>

@@ -1,4 +1,6 @@
-const theme = {
+import { createTheme } from "@material-ui/core";
+
+const theme = createTheme({
     overrides: {
         MuiButton: {
             root: {
@@ -22,6 +24,6 @@ const theme = {
             }
         }
     },
-}
+})
 
 export default theme;

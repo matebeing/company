@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import useStyles from "./style"
 import RegisterForm from "../RegisterForm";
 import { useState } from "react";
-import Icon from '../../assets/icon.svg';
+import Icon from '../../assets/icon.svg?react';
 import Button from '@material-ui/core/Button';
 import { useNavigate } from 'react-router-dom';
 
@@ -33,7 +33,7 @@ const RegisterWrapper = () => {
                 <RegisterForm onRegister={handleRegister} />
             </div>
             <div className={classes.registerBlock} style={{display: register ? 'flex' : 'none'}}>
-                <img className={classes.registerBlockIcon} src={Icon} />
+                <Icon className={classes.registerBlockIcon} />
                 <strong>Cadastro realizado com sucesso</strong>
                 <Button variant='contained' color="primary"  onClick={handleClick} disableElevation>Fazer login</Button>
             </div>

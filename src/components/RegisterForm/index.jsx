@@ -41,11 +41,17 @@ const RegisterForm = ({ onRegister }) => {
                     <TextField
                         {...field}
                         label="Nome Completo"
+                        id="fullName"
                         variant="outlined"
                         error={!!errors.fullName}
                         helperText={errors.fullName ? errors.fullName.message : ''}
                         fullWidth
                         margin="normal"
+                        InputProps={{
+                            inputProps: {
+                                'data-testid': "name-input"
+                            }
+                        }}
                     />
                     )}
                 />
@@ -57,6 +63,7 @@ const RegisterForm = ({ onRegister }) => {
                     <TextField
                         {...field}
                         label="Nome Social"
+                        id="nickname"
                         variant="outlined"
                         error={!!errors.nickname}
                         helperText={errors.nickname ? errors.nickname.message : ''}
@@ -76,6 +83,7 @@ const RegisterForm = ({ onRegister }) => {
                     <TextField
                         {...field}
                         label="E-mail"
+                        id="email"
                         variant="outlined"
                         error={!!errors.email}
                         helperText={errors.email ? errors.email.message : ''}
@@ -89,7 +97,7 @@ const RegisterForm = ({ onRegister }) => {
                     control={control}
                     defaultValue=""
                     render={({ field }) => (
-                        <PasswordField label="Senha"  {...field} errors={errors}/>
+                        <PasswordField label="Senha"  id="password" {...field} errors={errors}/>
                     )}
                 />
 
@@ -98,7 +106,7 @@ const RegisterForm = ({ onRegister }) => {
                     control={control}
                     defaultValue=""
                     render={({ field }) => (
-                        <PasswordField label="Confirmar senha" {...field} errors={errors}/>
+                        <PasswordField label="Confirmar senha" id="confirm" {...field} errors={errors}/>
                     )}
                 />                
             </section>  

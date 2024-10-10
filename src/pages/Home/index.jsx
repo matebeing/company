@@ -20,7 +20,8 @@ const Home = () => {
             });
     }, []);
 
-
+    console.log('DATAAAAAAAAAAAAAAAAAAAAAAA')
+    console.log(data)
     return (
         <main className={classes.main}>
             <Navbar account={state.data} />
